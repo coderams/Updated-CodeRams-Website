@@ -1,0 +1,20 @@
+body {
+  font-family: 'Squada One';
+}
+#caption {
+  font-family: 'Montserrat';
+  text-align: center;
+  margin-top: 10px;
+  font-size: 25px;
+}
+#bigtext {
+  font-size: 130px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.red {
+  color: rgb(255, 0, 0, 0.9);
+}
+.black {
+  color: black;
+}
