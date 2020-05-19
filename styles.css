@@ -150,3 +150,22 @@ body {
   height: 40vw;
   background-color: rgb(240, 240, 0, 0.12);
 }
+#pagetitle {
+  text-align: center;
+  font-size: 40px;
+}
+table {
+	border-spacing: 10px;
+}
+#firstel {
+
+}
+table, th {
+	border-top: 1px solid black;
+	padding-top: 12px;
+}
+td {
+	border-collapse: separate;
+	border-top: 1px solid black;
+	padding: 12px 12px 0px 12px
+}
