@@ -17,7 +17,7 @@
     		<ul>
     			<li><a href="mainpage.html">Home</a></li>
     			<li><a style="background-color:#545454" href="contests.html">Competitions</a></li>
-    			<li><a href="problems">Practice Problems</a></li>
+    			<li><a href="problems.html">Practice Problems</a></li>
     			<li><a href="tutorials">Coding Tutorials</a></li>
     			<li><a href="scores">Competition Leaderboard</a></li>
     			<li><a href="contact">Contact Us</a></li>
@@ -44,10 +44,12 @@
     </table>
     <script>
       var upcomingContests = [
-        ["CodeRams Contest #11", "May 23, 2020", ["Tristan"]],
-        ["CodeRams Contest #12", "May 30, 2020", ["TBD"]]
+
+        ["CodeRams Contest #12", "June 6, 2020", ["Tristan", "Brian"]],
+        ["CodeRams Team Competition", "TBD", ["Xavier", "Tristan", "Brian"]]
       ];
       var contests = [
+        ["CodeRams Contest #11", "May 23, 2020", "Bohdin", ["Xavier"], 281521],
         ["CodeRams Contest #10", "May 16, 2020", "Bohdin", ["Xavier"], 280260],
         ["CodeRams Contest #9", "May 9, 2020", "Xavier", ["Brian", "Shamus"], 279570],
         ["CodeRams Contest #8", "May 2, 2020", "Tristan", ["Xavier"], 278258],
@@ -69,7 +71,7 @@
         var date = upcomingContests[i][1];
         st = upcomingContests[i][0];
 
-        document.getElementById("ucontestlist").innerHTML += "<tr><td id=\"cname\">" + st + "</td>" + "<td id=\"cdate\">" + upcomingContests[i][1] + "</td><td id=\"cwrite\">" + upcomingContests[i][2] + "</td></tr>";
+        document.getElementById("ucontestlist").innerHTML += "<tr id=\"contest\"><td id=\"cname\">" + st + "</td>" + "<td id=\"cdate\">" + upcomingContests[i][1] + "</td><td id=\"cwrite\">" + upcomingContests[i][2] + "</td></tr>";
 
       }
 
@@ -84,7 +86,7 @@
           st = contests[i][0];
         }
 
-        document.getElementById("contestlist").innerHTML += "<tr><td id=\"cname\">" + st + "</td>" + "<td id=\"cdate\">" + contests[i][1] + "</td><td id=\"cwrite\">" + contests[i][3].join(", ") + "</em></td><td id=\"cwin\">" + contests[i][2] + "</td></tr>";
+        document.getElementById("contestlist").innerHTML += "<tr id=\"contest\"><td id=\"cname\">" + st + "</td>" + "<td id=\"cdate\">" + contests[i][1] + "</td><td id=\"cwrite\">" + contests[i][3].join(", ") + "</em></td><td id=\"cwin\">" + contests[i][2] + "</td></tr>";
 
 
       }

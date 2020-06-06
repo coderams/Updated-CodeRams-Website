@@ -165,7 +165,19 @@ table, th {
 	padding-top: 12px;
 }
 td {
-	border-collapse: separate;
+	/*border-collapse: separate;
+	border-top: 1px solid black;*/
+
+}
+
+#contest td {
+  border-collapse: separate;
 	border-top: 1px solid black;
-	padding: 12px 12px 0px 12px
+  padding: 12px 12px 0px 12px
+}
+
+#prob td {
+  margin-bottom: 0px;
+  padding-bottom: 50px;
+  padding: 12px 12px 10px 10px
 }

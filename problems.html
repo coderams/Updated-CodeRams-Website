@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JDHS CodeRams</title>
+        <meta charset="utf-8">
+        <title>New webpage</title>
+        <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Squada One">
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+      <p id="bigtext"><span class="red">CODE</span><span class="black"> RAMS</span></p>
+      <p id="caption">Jamesville-Dewitt High School's Computer Science Club</p>
+      <div id="navmenu">
+    		<ul>
+    			<li><a href="mainpage.html">Home</a></li>
+    			<li><a href="contests.html">Competitions</a></li>
+    			<li><a style="background-color:#545454" href="problems.html">Practice Problems</a></li>
+    			<li><a href="tutorials">Coding Tutorials</a></li>
+    			<li><a href="scores">Competition Leaderboard</a></li>
+    			<li><a href="contact">Contact Us</a></li>
+    		</ul>
+	    </div>
+		<body style="backgMath.floor-color:white" link="blue">
+    <h1 id="pagetitle">Past Problems</h1>
+    <table id="uproblist" align="center" borderspacing=30px>
+      <tr id="firstel">
+        <th>ID</th>
+        <th>Name</th>
+        <th>Difficulty</th>
+        <th>Author</th>
+      </tr>
+    </table>
+    <script>
+      var problist = [
+        ["Question-able Difficulty", 100, 281521, 1, "Xavier"],
+        ["Alarming String", 160, 281521, 2, "Xavier"],
+        ["Anti-sort", 240, 281521, 3, "Xavier"],
+        ["Math Team", 290, 281521, 4, "Xavier"],
+        ["Cheesy Numbers", 320, 281521, 5, "Xavier"],
+        ["Perfect Numbers", 360, 281521, 6, "Xavier"],
+        ["Dynamic Sorting", 430, 281521, 7, "Xavier"],
+        ["Continental Breakfast", 460, 281521, 8, "Xavier"],
+        ["Majestic Strings", 490, 281521, 9, "Xavier"],
+        ["Hydra Tree", 570, 281521, 10, "Xavier"],
+        ["Zoom Meeting", 640, 281521, 11, "Xavier"],
+        ["Triangulation Rocks the Nation", 630, 281521, 12, "Xavier"],
+        ["Star Wars", 670, 281521, 13, "Xavier"],
+        ["Gold Miner", 690, 281521, 14, "Xavier"],
+        ["Triangulation Rocks the Nation Again", 870, 281521, 15, "Xavier"],
+        ["Internet Anagram Server", 900, 281521, 16, "Xavier"],
+        ["Diverse String", 180, 280260, 1, "Xavier"],
+        ["Books", 190, 280260, 2, "Xavier"],
+        ["Colors", 220, 280260, 3, "Xavier"],
+        ["Division One", 240, 280260, 4, "Xavier"],
+        ["What the Frac (Easier Version)", 280, 280260, 5, "Xavier"],
+        ["Space Invaders", 310, 280260, 6, "Xavier"],
+        ["Autocorect", 690, 280260, 7, "Xavier"],
+        ["Affine Cipher", 440, 280260, 8, "Xavier"],
+        ["Tour de France", 610, 280260, 9, "Xavier"],
+        ["Chord Identification", 630, 280260, 10, "Xavier"],
+        ["Subway System", 570, 280260, 11, "Xavier"],
+        ["Latin Squares", 760, 280260, 12, "Xavier"],
+        ["What the Frac (Harder Version)", 580, 280260, 13, "Xavier"],
+        ["Game of Life", 720, 280260, 14, "Xavier"],
+        ["Minecraft Biome Finder", 770, 280260, 15, "Xavier"],
+        ["The Mirrors Strike Back", 850, 280260, 16, "Xavier"],
+        ["Code RAMs", 1000, 280260, 17, "Xavier"],
+        ["H.", 230, 279570, 1, "Brian"],
+        ["Pyramid", 260, 279570, 2, "Brian"],
+        ["Word Substitution", 340, 279570, 3, "Brian"],
+        ["Unit Conversion", 650, 279570, 8, "Brian"],
+        ["Airplane", 470, 279570, 9, "Shamus"],
+        ["Viginere Cipher", 520, 279570, 10, "Brian"],
+        ["Pseudocode Compiler", 820, 279570, 13, "Brian"],
+        ["The Robots", 70, 278258, 1, "Xavier"],
+        ["Radioactivity", 150, 278258, 2, "Xavier"],
+        ["The Model", 140, 278258, 3, "Xavier"],
+        ["Computer World", 190, 278258, 4, "Xavier"],
+        ["Spacelab", 260, 278258, 5, "Xavier"],
+        ["The Telephone Call", 280, 278258, 6, "Xavier"],
+        ["Music Non Stop", 330, 278258, 7, "Xavier"],
+        ["Computer Love", 390, 278258, 8, "Xavier"],
+        ["Techno Pop", 410, 278258, 9, "Xavier"],
+        ["Numbers", 470, 278258, 10, "Xavier"],
+        ["Neon Lights", 400, 278258, 11, "Xavier"],
+        ["It's More Fun To Compute", 550, 278258, 12, "Xavier"],
+        ["Autobahn", 490, 278258, 13, "Xavier"],
+        ["Ohm Sweet Ohm", 450, 278258, 14, "Xavier"],
+        ["Metropolis", 620, 278258, 15, "Xavier"],
+        ["Pocket Calculator", 710, 278258, 16, "Xavier"],
+        ["Home Computer", 730, 278258, 17, "Xavier"],
+        ["Trans Europe Express", 890, 278258, 18, "Xavier"],
+        ["Planet of Visions", 920, 278258, 19, "Xavier"],
+        ["Geiger Counter", 930, 278258, 20, "Xavier"],
+        ["The Man Machine", 900, 278258, 21, "Xavier"],
+        ["The Hall of Mirrors", 810, 278258, 22, "Xavier"],
+        ["It's A Me!...", 100, 277718, 1, "Sam"],
+        ["Infinity Gauntlet", 130, 277718, 2, "Sam"],
+        ["Shopping Spree", 250, 277718, 4, "Sam"],
+        ["Jar of Candies", 310, 277718, 5, "Sam"],
+        ["That Hertz!", 430, 277718, 6, "Sam"],
+        ["Flatten The Curve", 680, 277718, 7, "Sam"],
+        ["Over The Rainbow", 490, 277718, 8, "Sam"],
+        ["1337 5p34k", 450, 277718, 9, "Sam"],
+        ["It's a Mess!", 560, 277718, 10, "Sam"],
+        ["Patterns 1", 630, 277718, 11, "Tristan"],
+        ["The Numbers Mason!", 620, 277718, 12, "Sam"],
+        ["Fine Tuned", 660, 277718, 13, "Sam"],
+        ["Pattern Two", 720, 277718, 14, "Tristan"],
+        ["Symmetry", 690, 277718, 15, "Tristan"],
+        ["Switch Case", 260, 275991, 1, "Tristan"],
+        ["Multiply Characters", 250, 275991, 2, "Tristan"],
+        ["Maximum Number", 310, 275991, 3, "Tristan"],
+        ["Half Winds", 330, 275991, 4, "Tristan"],
+        ["Delete Characters", 380, 275991, 5, "Tristan"],
+        ["Schwarzschild Radius", 400, 275991, 6, "Tristan"],
+        ["Gas Cost", 390, 275991, 7, "Tristan"],
+        ["Intersection of Two Lines", 450, 275991, 8, "Tristan"],
+        ["Neural Network Weight Count", 420, 275991, 9, "Tristan"],
+        ["Tangential Velocity", 470, 275991, 10, "Tristan"],
+        ["Relative Strength Index", 520, 275991, 11, "Tristan"],
+        ["Word Rotation", 570, 275991, 12, "Tristan"],
+        ["Mersenne Primes", 540, 275991, 13, "Tristan"],
+        ["Days Between Two Dates", 740, 275991, 14, "Tristan"],
+        ["Tri-Angle", 830, 275991, 15, "Tristan"],
+        ["Yoda Translator", 270, 274976, 1, "Shamus"],
+        ["Planet Omicron Persei VIII", 500, 274976, 2, "Brian"],
+        ["Binary Math", 460, 274976, 3, "Brian"],
+        ["Who Will Win", 480, 274976, 4, "Brian"],
+        ["Basic Math", 460, 274976, 5, "Brian"],
+        ["Decryption", 490, 274976, 6, "Brian"],
+        ["The Array Checker-inator!", 470, 274976, 7, "Shamus"],
+        ["The Convergence of Two Tetra-sided Polygons, Known as Rectangles", 790, 274976, 8, "Shamus"],
+        ["Passing Notes", 230, 274976, 9, "Brian"],
+        ["Tic-Tac-Toe", 560, 274976, 10, "Brian"],
+        ["When is my meeting?", 720, 274976, 11, "Brian"],
+        ["Train-ficiency", 530, 274976, 12, "Shamus"],
+        ["Stopwatch Issues", 570, 274976, 13, "Brian"],
+        ["Minecraft Prank", 760, 274976, 14, "Brian"],
+        ["Competition Rules", 60, 273650, 1, "Xavier"],
+        ["Money Sum", 120, 273650, 2, "Xavier"],
+        ["Funny Numbers", 170, 273650, 3, "Xavier"],
+        ["Gooooooooooal!", 200, 273650, 4, "Xavier"],
+        ["World Cup (Easier Version)", 240, 273650, 5, "Xavier"],
+        ["2001: A Space Odyssey", 260, 273650, 6, "Xavier"],
+        ["Prison Break", 430, 273650, 7, "Xavier"],
+        ["Free Throws", 350, 273650, 8, "Xavier"],
+        ["Broken Ladder", 400, 273650, 9, "Xavier"],
+        ["Distinct Numbers", 450, 273650, 10, "Xavier"],
+        ["Speed Limits", 500, 273650, 11, "Xavier"],
+        ["Practice Katanas", 490, 273650, 12, "Xavier"],
+        ["Unshuffle the Cards", 610, 273650, 13, "Xavier"],
+        ["Number Code (Easier Version)", 550, 273650, 14, "Xavier"],
+        ["Valid Sudoku", 620, 273650, 15, "Xavier"],
+        ["World Cup (Harder Version)", 680, 273650, 16, "Xavier"],
+        ["Number Code (Harder Version)", 710, 273650, 17, "Xavier"],
+        ["Low-Budget Flight Paths", 920, 273650, 18, "Xavier"],
+        ["Gravity Vehicle Testing", 100, 268800, 1, "Xavier"],
+        ["Chem lab: Cross the Charges", 110, 268800, 2, "Xavier"],
+        ["Machines", 130, 268800, 3, "Sam"],
+        ["Boomilever", 220, 268800, 5, "Xavier"],
+        ["Codebusters", 390, 268800, 6, "Sam"],
+        ["Hovercraft", 450, 268800, 7, "Xavier"],
+        ["Detector Building", 650, 268800, 8, "Tristan"],
+        ["Ping Pong Parachute", 420, 268800, 9, "Brian"],
+        ["Missed Basketball Game", 470, 268800, 10, "Xavier"],
+        ["Write It, Do It", 510, 268800, 11, "Xavier"],
+        ["Hello CodeRams", 20, 260622, 1, "Xavier"],
+        ["Points per Game", 90, 260622, 2, "Xavier"],
+        ["Ski Sum", 150, 260622, 3, "Xavier"],
+        ["Easy Exponentials", 190, 260622, 4, "Xavier"],
+        ["Resistors in Parallel", 200, 260622, 5, "Xavier"],
+        ["Labyrinth", 360, 260622, 7, "Xavier"],
+        ["Subway System", 840, 260622, 10, "Xavier"]
+      ];
+
+      var ctp = [16, 33, 40, 62, 76, 91, 105, 123, 133, 140];
+      var ls = 0;
+      for (var i = 0 ; i < ctp.length ; i++) {
+        var nproblist = [];
+        for (var j = ls ; j < ctp[i] ; j++) {
+          nproblist[j] = problist[ctp[i] - (j - ls) - 1];
+        }
+        for (var j = ls ; j < ctp[i] ; j++) {
+          problist[j] = nproblist[j];
+        }
+        ls = ctp[i];
+      }
+      for (var i = 0 ; i < problist.length ; i++) {
+        if (problist[i][3] < 10) {
+          problist[i][3] = problist[i][3].toString();
+          problist[i][3] = "0" + problist[i][3];
+        }
+        var col = "#xxxx0020".split("");
+        var diff = problist[i][1];
+        var digs = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"]
+        col[1] = digs[Math.floor((diff) * (15 / 1000))];
+        col[2] = digs[Math.floor(((diff) * (240 / 1000))) % 16];
+        col[3] = digs[Math.floor((1000 - diff) * (15 / 1000))];
+        col[4] = digs[Math.floor(((1000 - diff) * (240 / 1000))) % 16];
+        col = col.join("");
+        console.log(problist.length-i + " " + Math.floor((diff) * (15 / 1000)));
+        console.log(problist.length-i + " " + Math.floor(((diff) * (240 / 1000))) % 16);
+        console.log(problist.length-i + " " + Math.floor((1000-diff) * (15 / 1000)));
+        console.log(problist.length-i + " " + Math.floor(((1000-diff) * (240 / 1000))) % 16);
+        document.getElementById("uproblist").innerHTML += "<tr id=\"prob\" style=\"background-color:" + col + "\"><td>" + (problist.length-i) + "</td><td><a href=\"https://codeforces.com/gym/" + problist[i][2] + "/problem/" + problist[i][3] + "\" target=blank>" + problist[i][0] + "</a></td><td>" + problist[i][1] + "</td><td>" + problist[i][4] + "</td></tr>";
+        //document.getElementById("ucontestlist").innerHTML += "<tr><td><a href=\"https://codeforces.com/gym/" + problist[i][2] + "/problem/" + problist[i][3] + "\">Hello</td></tr>";
+      }
+
+    </script>
+
+    </body>
+</html>
