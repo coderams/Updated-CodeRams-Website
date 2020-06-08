@@ -35,6 +35,17 @@
     </table>
     <script>
       var problist = [
+        ["Pythagorean Theorem", 230, 283331, 1, "Tristan"],
+        ["Valid Triangle", 250, 283331, 2, "Tristan"],
+        ["Triangle Trigonometry", 410, 283331, 3, "Tristan"],
+        ["Unit Circle", 360, 283331, 4, "Tristan"],
+        ["Parity Checker", 330, 283331, 5, "Tristan"],
+        ["BCD Conversion", 370, 283331, 6, "Tristan"],
+        ["Array Statistics", 560, 283331, 7, "Tristan"],
+        ["Closest Houses", 540, 283331, 8, "Tristan"],
+        ["Computing Sin", 650, 283331, 9, "Tristan"],
+        ["Dot Product", 740, 283331, 10, "Tristan"],
+        ["Maximum Value in Pascal's Triangle", 720, 283331, 11, "Tristan"],
         ["Question-able Difficulty", 100, 281521, 1, "Xavier"],
         ["Alarming String", 160, 281521, 2, "Xavier"],
         ["Anti-sort", 240, 281521, 3, "Xavier"],
@@ -177,7 +188,7 @@
         ["Subway System", 840, 260622, 10, "Xavier"]
       ];
 
-      var ctp = [16, 33, 40, 62, 76, 91, 105, 123, 133, 140];
+      var ctp = [11, 27, 44, 51, 73, 87, 102, 116, 134, 144, 151];
       var ls = 0;
       for (var i = 0 ; i < ctp.length ; i++) {
         var nproblist = [];
@@ -194,7 +205,7 @@
           problist[i][3] = problist[i][3].toString();
           problist[i][3] = "0" + problist[i][3];
         }
-        var col = "#xxxx0020".split("");
+        var col = "#xxxx0040".split("");
         var diff = problist[i][1];
         var digs = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"]
         col[1] = digs[Math.floor((diff) * (15 / 1000))];
