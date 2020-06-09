@@ -152,7 +152,7 @@ body {
 }
 #pagetitle {
   text-align: center;
-  font-size: 40px;
+  font-size: 60px;
 }
 table {
 	border-spacing: 10px;
@@ -202,6 +202,14 @@ td {
   font-size: 18px;
 }
 
+#hugeexplanation {
+  font-family: 'Squada One';
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 80px;
+}
+
 #bigexplanation {
   font-family: 'Squada One';
   margin-top: 20px;
@@ -222,4 +230,49 @@ td {
 
 .bluecode {
   color: rgb(0, 0, 200);
+}
+
+.comment {
+  color: rgb(200, 0, 0);
+}
+
+pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+
+#subtitle {
+  font-size: 16px;
+  text-align: center;
+}
+
+#box1 {
+  width: 800px;
+  height: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 24px;
+  color: black;
+  border-radius: 10px;
+  padding-top: 10px;
+  font-family: 'Montserrat';
+}
+
+#subbox {
+  width: 800px;
+  padding-left: 100px;
+  padding-right: 20px;
+  font-size: 14px;
+  font-family: 'Montserrat';
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -52px;
+  margin-bottom: 40px;
 }

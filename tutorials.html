@@ -24,107 +24,59 @@
     		</ul>
 	    </div>
 		<body style="background-color:white" link="blue">
-    <h1 id="pagetitle">Tutorials</h1>
 
-    <div id="tutorial"></div>
+    <h1 id="pagetitle">Coding Tutorials</h1>
+    <p id="subtitle"><em>Learn useful coding knowledge, ranging from very easy to very advanced.</em></p>
+
 
     <script>
-
-      function issm(x, st) {
-        if (x.split("").slice(0, st.length + 2).join("") == "[" + st + "]") {
-          return true;
-        }
-        return false;
-      }
-
-      var text = [
-      "A 2D list is a list, where each element is another list. Each element of these additional lists could be integers, strings, or even other lists (making it a 3D list).",
-      "2D lists have many important applications in coding problems. We'll discuss them in detail in this tutorial.",
-      "[big]Basics of 2D Lists",
-      "[med]Defining 2D Lists",
-      "First, let's discuss how to define a 2D list.",
-      "To immediately define a 2D list, we can do something similar to how you define a 1D list. Like defining a 1D list, you separate each element with a comma, and enclose the list in square brackets. However, in this case, each element is another list, and we define each one in a similar way.",
-      "[cd]example2Dlist = [[1, 2], [4, 6], [11, 13]]",
-      "This code example defines a 2D list with three elements, with each sub-list having two elements. Note that the sub-lists of a 2D list don't all have to be the same length. In fact, you can even have a list where some elements are lists, and other elements are integers or strings. This is only rarely useful in coding problems, however.",
-      "[med]Accessing Elements of 2D Lists",
-      "Accessing each sub-list in a 2D list works similar to accessing individual elements in a 1D list. Let's say we have the following 2D list:",
-      "[cd]another2Dlist = [[7, 9, 3, 4], [8, 4, 6, 8], [1, 1, 2, 5]]",
-      "Then, to print out the first element of the 2D list, we could use the following code:",
-      "[cd]print(another2Dlist[0])",
-      "This prints out the first element of the 2D list, which is the following:",
-      "[cd][7, 9, 3, 4]",
-      "To print out an individual element from a 2D list, we can first cast one of its sub-lists to another variable, and access an individual element in the sub-list, like this:",
-      "[cd]my2Dlist = [[7, 8, 4], [3, 6, 9], [1, 1, 2]]",
-      "[cd]firstElement = my2Dlist[0]",
-      "[cd]individualElement = firstElement[0]",
-      "This code will store 7 in individualElement, the first element of the first sub-list of my2Dlist.",
-      "This code can be condensed into one line, like this:",
-      "[cd]my2Dlist = [[7, 8, 4], [3, 6, 9], [1, 1, 2]]",
-      "[cd]individualElement = my2Dlist[0][0]",
-      "This has the same effect as the previous code sample. In other words, to access any element in a 2D list, use two bracketed identifiers, with the first one representing the sub-list that contains the element, and the second one representing the index of the element in the sub-list.",
-      "For example, this code will print 9, the 3rd element in the 2nd sub-list of my2Dlist. (Remember that all lists use zero-based indexing.)",
-      "[cd]my2Dlist = [[7, 8, 4], [3, 6, 9], [1, 1, 2]]",
-      "[cd]print(my2Dlist[1][2])",
-      "[med]Reading 2D Lists",
-      "In most coding problems involving 2D lists, the input will consist of a grid representation of the 2D list, where each element in each sub-list may or may not be separated by a space, depending on the problem. For example, here's a possible input for a 5 by 5 2D list:",
-      "[cd]0 9 7 8 2",
-      "[cd]3 9 6 2 1",
-      "[cd]3 4 3 3 2",
-      "[cd]0 8 8 1 5",
-      "[cd]2 3 9 1 0",
-      "To read in a 2D list in this format, we can read each sub-list one at a time, and add each one to the 2D list using the append command. The code will look like this:",
-      "[cd]my2Dlist = []",
-      "[cd]for i in range(0, 5):",
-      "[cd]    sublist = [int(j) for j in input().split(\" \")]",
-      "[cd]    my2Dlist.append(sublist)",
-      "[big]2D Grids",
-      "The \"classic\" use for 2D lists is for 2D grids, which could be labyrinths, matrices, or maps. Problems involving these topics usually require 2D lists.",
-
+      var colors = ["#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF", "#00FFFF", "#888888", "#FF8800", "#8800FF", "#00FF88", "#88FF00", "#FF0088", "#0088FF", "#884400", "#44FF44", "#8888FF", "#FFFF44", "#884444", "#44FF44"];
+      var topics = [
+        ["Printing", "Learn how to write your first program, and write programs to print out text and variables.", "printing"],
+        ["Input", "Learn how to read a line of input and manipulate it", "input"],
+        ["Logic and If Statements", "Learn how to use boolean expressions, and if/else statements", "logic"],
+        ["For and While Loops", "Learn how to use looping to repeat a block of code several times", "looping"],
+        ["Lists", "Learn how to store multiple variables inside of a list", "lists"],
+        ["Functions", "Learn how to use functions in your programs.", "functions"],
+        ["2D Lists", "Learn how to solve more advanced problems using 2D lists", "2Dlists"],
+        ["Divisors and Prime Factors", "Learn how to implement more advanced math functions in your programs", "math"],
+        ["ASCII Values and Cryptography", "Learn how to use ord() and chr() to manipulate characters' ASCII values and solve cryptography problems", "ascii"],
+        ["Advanced Recursion and Backtracking", "Learn how to solve certain advanced problems using recursion and backtracking", "recursion"],
+        ["Algorithmic Programming Basics", "Learn how to determine the time complexity of your program, and implement several basic algorithms", "algorithms"],
+        ["Advanced Programming-Related Math", "Learn how to make math operations used in your programs more efficient", "algorithmicmath"],
+        ["Arithmetic Sums and Triangle Numbers", "Learn how to efficiently find the sum of several integers, and explore the properties of triangle numbers.", "trianglenums"],
+        ["Permutations and Subsets", "Learn how to find permutations and subsets of a list, and the time complexity of both", "subsets"],
+        ["Dynamic Programming", "Learn an essential method for solving many types of problems", "dp"],
+        ["Basics of Graph Theory", "Learn how to store graphs, and basic graph algorithms like DFS and BFS.", "graphs"],
+        ["Binary Search", "Learn how to find a given value in a sorted list efficiently.", "binsearch"],
+        ["Prefix Sums and Segment Trees", "Learn how to use advanced data structures to answer multiple queries about a given list.", "segtrees"],
+        ["Advanced Graph Theory Concepts", "Learn more advanced graph algorithms, such as Dijkstra's Shortest Path Algorithm", "advancedgraphs"]
       ];
 
+      var fac = "b";
 
-      var keywords = ["False", "await",	"else",	"import",	"pass", "None",	"break",	"except",	"in",	"raise", "True",	"class",	"finally",	"is",	"return", "and",	"continue",	"for",	"lambda",	"try", "as",	"def",	"from",	"nonlocal",	"while", "assert",	"del",	"global",	"not",	"with", "async",	"elif",	"if",	"or",	"yield"];
+      var t1 = 6;
+      var t2 = 10;
 
-      var code = false;
-      var thiscode = false;
-      var i = 0;
-      while (i < text.length) {
-        if (issm(text[i], "cd")) {
-          console.log("!code!");
-          var st = "<pre id=\"code\">";
-          while (i < text.length && issm(text[i], "cd")) {
-            var txt = text[i].split("").slice(4, text[i].length).join("").split(" ");
-            for (var j = 0 ; j < txt.length ; j++) {
-              if (keywords.indexOf(txt[j]) != -1) {
-                st += "<span class=\"bluecode\">" + txt[j] + "</span> ";
-              }
-              else {
-                st += txt[j] + " ";
-              }
-            }
-            st += "<br>"
-            i++;
-          }
-          st += "</pre>";
+      document.body.innerHTML += "<p id=\"hugeexplanation\">Basic Coding Techniques</p>";
 
-          document.getElementById("tutorial").innerHTML += st;
-          if (i >= text.length) {
-            break;
-          }
-        }
-
-        if (issm(text[i], "big")) {
-          document.getElementById("tutorial").innerHTML += "<p id=\"bigexplanation\">" + text[i].split("").slice(5, text[i].length).join("") + "</p>";
-        }
-        else if (issm(text[i], "med")) {
-          document.getElementById("tutorial").innerHTML += "<p id=\"medexplanation\">" + text[i].split("").slice(5, text[i].length).join("") + "</p>";
-        }
-        else {
-          document.getElementById("tutorial").innerHTML += "<p id=\"explanation\">" + text[i] + "</p>";
-        }
-        i++;
+      for (var i = 0 ; i < t1 ; i++) {
+        document.body.innerHTML += "<a style=\"text-decoration:none\" href=\"tutorials/" + topics[i][2] + ".html\"><p id=\"box1\" style=\"background-color:" + colors[i] + fac + "0\">" + topics[i][0] + "</p></a>";
+        document.body.innerHTML += "<p id=\"subbox\">" + topics[i][1] + "</p>"
       }
-      console.log(document.getElementById("tutorial").innerHTML);
+      document.body.innerHTML += "<p id=\"hugeexplanation\">More Advanced Coding Techniques</p>";
+
+      for (var i = t1 ; i < t2 ; i++) {
+        document.body.innerHTML += "<a style=\"text-decoration:none\" href=\"tutorials/" + topics[i][2] + ".html\"><p id=\"box1\" style=\"background-color:" + colors[i] + fac + "0\">" + topics[i][0] + "</p></a>";
+        document.body.innerHTML += "<p id=\"subbox\">" + topics[i][1] + "</p>"
+      }
+
+      document.body.innerHTML += "<p id=\"hugeexplanation\">Advanced Algorithmic Programming</p>";
+      for (var i = t2 ; i < topics.length ; i++) {
+        document.body.innerHTML += "<a style=\"text-decoration:none\" href=\"tutorials/" + topics[i][2] + ".html\"><p id=\"box1\" style=\"background-color:" + colors[i] + fac + "0\">" + topics[i][0] + "</p></a>";
+        document.body.innerHTML += "<p id=\"subbox\">" + topics[i][1] + "</p>"
+      }
+
     </script>
 
 
