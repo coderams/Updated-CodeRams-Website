@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JDHS CodeRams</title>
+        <meta charset="utf-8">
+        <title>New webpage</title>
+        <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Squada One">
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+      <p id="bigtext"><span class="red">CODE</span><span class="black"> RAMS</span></p>
+      <p id="caption">Jamesville-Dewitt High School's Computer Science Club</p>
+      <div id="navmenu">
+    		<ul>
+    			<li><a href="mainpage.html">Home</a></li>
+    			<li><a href="contests.html">Competitions</a></li>
+    			<li><a href="problems.html">Practice Problems</a></li>
+    			<li><a style="background-color:#545454" href="tutorials.html">Coding Tutorials</a></li>
+    			<li><a href="scores">Competition Leaderboard</a></li>
+    			<li><a href="contact">Contact Us</a></li>
+    		</ul>
+	    </div>
+		<body style="background-color:white" link="blue">
+    <h1 id="pagetitle">Tutorials</h1>
+
+    <div id="tutorial"></div>
+
+    <script>
+
+      function iscode(x) {
+        if (x.split("").slice(0, 4).join("") == "[cd]") {
+          return true;
+        }
+        return false;
+      }
+
+      var text = [
+      "This code reads in an integer as input.",
+      "The code makes it easy to add to new tutorials, with the document auto-styling the code and highlighting keywords.",
+      "[cd]n = int(input())",
+      "[cd]for i in range(0, n):",
+      "[cd]    print(i)",
+      "You can add multiple lines of text and",
+      "[cd]multiple code boxes in one tutorial"
+      ];
+
+
+      var keywords = ["False", "await",	"else",	"import",	"pass", "None",	"break",	"except",	"in",	"raise", "True",	"class",	"finally",	"is",	"return", "and",	"continue",	"for",	"lambda",	"try", "as",	"def",	"from",	"nonlocal",	"while", "assert",	"del",	"global",	"not",	"with", "async",	"elif",	"if",	"or",	"yield"];
+
+      var code = false;
+      var thiscode = false;
+      var i = 0;
+      while (i < text.length) {
+        if (iscode(text[i])) {
+          console.log("!code!");
+          var st = "<pre id=\"code\">";
+          while (i < text.length && iscode(text[i])) {
+            var txt = text[i].split("").slice(4, text[i].length).join("").split(" ");
+            for (var j = 0 ; j < txt.length ; j++) {
+              if (keywords.indexOf(txt[j]) != -1) {
+                st += "<span class=\"bluecode\">" + txt[j] + "</span> ";
+              }
+              else {
+                st += txt[j] + " ";
+              }
+            }
+            st += "<br>"
+            i++;
+          }
+          st += "</pre>";
+
+          document.getElementById("tutorial").innerHTML += st;
+          if (i >= text.length) {
+            break;
+          }
+        }
+
+        document.getElementById("tutorial").innerHTML += "<p id=\"explanation\">" + text[i] + "</p>";
+
+        i++;
+      }
+      console.log(document.getElementById("tutorial").innerHTML);
+    </script>
+
+
+    </body>
+</html>
