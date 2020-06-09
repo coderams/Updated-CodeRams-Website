@@ -30,21 +30,56 @@
 
     <script>
 
-      function iscode(x) {
-        if (x.split("").slice(0, 4).join("") == "[cd]") {
+      function issm(x, st) {
+        if (x.split("").slice(0, st.length + 2).join("") == "[" + st + "]") {
           return true;
         }
         return false;
       }
 
       var text = [
-      "This code reads in an integer as input.",
-      "The code makes it easy to add to new tutorials, with the document auto-styling the code and highlighting keywords.",
-      "[cd]n = int(input())",
-      "[cd]for i in range(0, n):",
-      "[cd]    print(i)",
-      "You can add multiple lines of text and",
-      "[cd]multiple code boxes in one tutorial"
+      "A 2D list is a list, where each element is another list. Each element of these additional lists could be integers, strings, or even other lists (making it a 3D list).",
+      "2D lists have many important applications in coding problems. We'll discuss them in detail in this tutorial.",
+      "[big]Basics of 2D Lists",
+      "[med]Defining 2D Lists",
+      "First, let's discuss how to define a 2D list.",
+      "To immediately define a 2D list, we can do something similar to how you define a 1D list. Like defining a 1D list, you separate each element with a comma, and enclose the list in square brackets. However, in this case, each element is another list, and we define each one in a similar way.",
+      "[cd]example2Dlist = [[1, 2], [4, 6], [11, 13]]",
+      "This code example defines a 2D list with three elements, with each sub-list having two elements. Note that the sub-lists of a 2D list don't all have to be the same length. In fact, you can even have a list where some elements are lists, and other elements are integers or strings. This is only rarely useful in coding problems, however.",
+      "[med]Accessing Elements of 2D Lists",
+      "Accessing each sub-list in a 2D list works similar to accessing individual elements in a 1D list. Let's say we have the following 2D list:",
+      "[cd]another2Dlist = [[7, 9, 3, 4], [8, 4, 6, 8], [1, 1, 2, 5]]",
+      "Then, to print out the first element of the 2D list, we could use the following code:",
+      "[cd]print(another2Dlist[0])",
+      "This prints out the first element of the 2D list, which is the following:",
+      "[cd][7, 9, 3, 4]",
+      "To print out an individual element from a 2D list, we can first cast one of its sub-lists to another variable, and access an individual element in the sub-list, like this:",
+      "[cd]my2Dlist = [[7, 8, 4], [3, 6, 9], [1, 1, 2]]",
+      "[cd]firstElement = my2Dlist[0]",
+      "[cd]individualElement = firstElement[0]",
+      "This code will store 7 in individualElement, the first element of the first sub-list of my2Dlist.",
+      "This code can be condensed into one line, like this:",
+      "[cd]my2Dlist = [[7, 8, 4], [3, 6, 9], [1, 1, 2]]",
+      "[cd]individualElement = my2Dlist[0][0]",
+      "This has the same effect as the previous code sample. In other words, to access any element in a 2D list, use two bracketed identifiers, with the first one representing the sub-list that contains the element, and the second one representing the index of the element in the sub-list.",
+      "For example, this code will print 9, the 3rd element in the 2nd sub-list of my2Dlist. (Remember that all lists use zero-based indexing.)",
+      "[cd]my2Dlist = [[7, 8, 4], [3, 6, 9], [1, 1, 2]]",
+      "[cd]print(my2Dlist[1][2])",
+      "[med]Reading 2D Lists",
+      "In most coding problems involving 2D lists, the input will consist of a grid representation of the 2D list, where each element in each sub-list may or may not be separated by a space, depending on the problem. For example, here's a possible input for a 5 by 5 2D list:",
+      "[cd]0 9 7 8 2",
+      "[cd]3 9 6 2 1",
+      "[cd]3 4 3 3 2",
+      "[cd]0 8 8 1 5",
+      "[cd]2 3 9 1 0",
+      "To read in a 2D list in this format, we can read each sub-list one at a time, and add each one to the 2D list using the append command. The code will look like this:",
+      "[cd]my2Dlist = []",
+      "[cd]for i in range(0, 5):",
+      "[cd]    sublist = [int(j) for j in input().split(\" \")]",
+      "[cd]    my2Dlist.append(sublist)",
+      "[big]2D Grids",
+      "The \"classic\" use for 2D lists is for 2D grids, which could be labyrinths, matrices, or maps. Problems involving these topics usually require 2D lists.",
+
       ];
 
 
@@ -54,10 +89,10 @@
       var thiscode = false;
       var i = 0;
       while (i < text.length) {
-        if (iscode(text[i])) {
+        if (issm(text[i], "cd")) {
           console.log("!code!");
           var st = "<pre id=\"code\">";
-          while (i < text.length && iscode(text[i])) {
+          while (i < text.length && issm(text[i], "cd")) {
             var txt = text[i].split("").slice(4, text[i].length).join("").split(" ");
             for (var j = 0 ; j < txt.length ; j++) {
               if (keywords.indexOf(txt[j]) != -1) {
@@ -78,8 +113,15 @@
           }
         }
 
-        document.getElementById("tutorial").innerHTML += "<p id=\"explanation\">" + text[i] + "</p>";
-
+        if (issm(text[i], "big")) {
+          document.getElementById("tutorial").innerHTML += "<p id=\"bigexplanation\">" + text[i].split("").slice(5, text[i].length).join("") + "</p>";
+        }
+        else if (issm(text[i], "med")) {
+          document.getElementById("tutorial").innerHTML += "<p id=\"medexplanation\">" + text[i].split("").slice(5, text[i].length).join("") + "</p>";
+        }
+        else {
+          document.getElementById("tutorial").innerHTML += "<p id=\"explanation\">" + text[i] + "</p>";
+        }
         i++;
       }
       console.log(document.getElementById("tutorial").innerHTML);
