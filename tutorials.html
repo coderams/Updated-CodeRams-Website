@@ -19,8 +19,8 @@
     			<li><a href="contests.html">Competitions</a></li>
     			<li><a href="problems.html">Practice Problems</a></li>
     			<li><a style="background-color:#545454" href="tutorials.html">Coding Tutorials</a></li>
-    			<li><a href="scores">Competition Leaderboard</a></li>
-    			<li><a href="contact">Contact Us</a></li>
+    			<li><a href="scores.html">Competition Leaderboard</a></li>
+    			<li><a href="contact.html">Contact Us</a></li>
     		</ul>
 	    </div>
 		<body style="background-color:white" link="blue">
@@ -32,25 +32,25 @@
     <script>
       var colors = ["#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF", "#00FFFF", "#888888", "#FF8800", "#8800FF", "#00FF88", "#88FF00", "#FF0088", "#0088FF", "#884400", "#44FF44", "#8888FF", "#FFFF44", "#884444", "#44FF44"];
       var topics = [
-        ["Printing", "Learn how to write your first program, and write programs to print out text and variables.", "printing"],
-        ["Input", "Learn how to read a line of input and manipulate it", "input"],
-        ["Logic and If Statements", "Learn how to use boolean expressions, and if/else statements", "logic"],
-        ["For and While Loops", "Learn how to use looping to repeat a block of code several times", "looping"],
-        ["Lists", "Learn how to store multiple variables inside of a list", "lists"],
-        ["Functions and Dictionaries", "Learn how to use functions and dictionaries in your programs.", "functions"],
-        ["2D Lists", "Learn how to solve more advanced problems using 2D lists", "2Dlists"],
-        ["Divisors and Prime Factors", "Learn how to implement more advanced math functions in your programs", "math"],
-        ["ASCII Values and Cryptography", "Learn how to use ord() and chr() to manipulate characters' ASCII values and solve cryptography problems", "ascii"],
-        ["Advanced Recursion and Backtracking", "Learn how to solve certain advanced problems using recursion and backtracking", "recursion"],
-        ["Algorithmic Programming Basics", "Learn how to determine the time complexity of your program, and implement several basic algorithms", "algorithms"],
-        ["Advanced Programming-Related Math", "Learn how to make math operations used in your programs more efficient", "algorithmicmath"],
-        ["Arithmetic Sums and Triangle Numbers", "Learn how to efficiently find the sum of several integers, and explore the properties of triangle numbers.", "trianglenums"],
-        ["Permutations and Subsets", "Learn how to find permutations and subsets of a list, and the time complexity of both", "subsets"],
-        ["Dynamic Programming", "Learn an essential method for solving many types of problems", "dp"],
-        ["Basics of Graph Theory", "Learn how to store graphs, and basic graph algorithms like DFS and BFS.", "graphs"],
-        ["Binary Search", "Learn how to find a given value in a sorted list efficiently.", "binsearch"],
-        ["Prefix Sums and Segment Trees", "Learn how to use advanced data structures to answer multiple queries about a given list.", "segtrees"],
-        ["Advanced Graph Theory Concepts", "Learn more advanced graph algorithms, such as Dijkstra's Shortest Path Algorithm", "advancedgraphs"]
+        ["Printing", "Learn how to write your first program, and write programs to print out text and variables.", "printing", 2],
+        ["Input", "Learn how to read a line of input and manipulate it", "input", 2],
+        ["Logic and If Statements", "Learn how to use boolean expressions, and if/else statements", "logic", 2],
+        ["For and While Loops", "Learn how to use looping to repeat a block of code several times", "looping", 2],
+        ["Lists", "Learn how to store multiple variables inside of a list", "lists", 2],
+        ["Functions and Dictionaries", "Learn how to use functions and dictionaries in your programs.", "functions", 2],
+        ["2D Lists", "Learn how to solve more advanced problems using 2D lists", "2Dlists", 2],
+        ["Divisors and Prime Factors", "Learn how to implement more advanced math functions in your programs", "math", 2],
+        ["ASCII Values and Cryptography", "Learn how to use ord() and chr() to manipulate characters' ASCII values and solve cryptography problems", "ascii", 0],
+        ["Advanced Recursion and Backtracking", "Learn how to solve certain advanced problems using recursion and backtracking", "recursion", 0],
+        ["Algorithmic Programming Basics", "Learn how to determine the time complexity of your program, and implement several basic algorithms", "algorithms", 0],
+        ["Advanced Programming-Related Math", "Learn how to make math operations used in your programs more efficient", "algorithmicmath", 0],
+        ["Arithmetic Sums and Triangle Numbers", "Learn how to efficiently find the sum of several integers, and explore the properties of triangle numbers.", "trianglenums", 0],
+        ["Permutations and Subsets", "Learn how to find permutations and subsets of a list, and the time complexity of both", "subsets", 0],
+        ["Dynamic Programming", "Learn an essential method for solving many types of problems", "dp", 0],
+        ["Basics of Graph Theory", "Learn how to store graphs, and basic graph algorithms like DFS and BFS.", "graphs", 0],
+        ["Binary Search", "Learn how to find a given value in a sorted list efficiently.", "binsearch", 0],
+        ["Prefix Sums and Segment Trees", "Learn how to use advanced data structures to answer multiple queries about a given list.", "segtrees", 0],
+        ["Advanced Graph Theory Concepts", "Learn more advanced graph algorithms, such as Dijkstra's Shortest Path Algorithm", "advancedgraphs", 0]
       ];
 
       var fac = "b";
@@ -60,21 +60,61 @@
 
       document.body.innerHTML += "<p id=\"hugeexplanation\">Basic Coding Techniques</p>";
 
+      for (var i = 0 ; i < colors.length ; i++) {
+        if (!topics[i][3]) {
+          ls = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"]
+          r = ls.indexOf(colors[i][1]) * 16 + ls.indexOf(colors[i][2])
+          g = ls.indexOf(colors[i][3]) * 16 + ls.indexOf(colors[i][4])
+          b = ls.indexOf(colors[i][5]) * 16 + ls.indexOf(colors[i][6])
+          colors[i] = "rgba(" + r.toString() + ", " + g.toString() + ", " + b.toString() + ", 0.05);";
+        }
+      }
+
       for (var i = 0 ; i < t1 ; i++) {
-        document.body.innerHTML += "<a style=\"text-decoration:none\" href=\"tutorials/" + topics[i][2] + ".html\"><p id=\"box1\" style=\"background-color:" + colors[i] + fac + "0\">" + topics[i][0] + "</p></a>";
-        document.body.innerHTML += "<p id=\"subbox\">" + topics[i][1] + "</p>"
+        if (topics[i][3]) {
+          document.body.innerHTML += "<a style=\"text-decoration:none\" href=\"tutorials/" + topics[i][2] + ".html\"><p id=\"box1\" style=\"background-color:" + colors[i] + fac + "0\">" + topics[i][0] + "</p></a>";
+        }
+        else {
+          document.body.innerHTML += "<div style=\"text-decoration:none\" href=\"tutorials/" + topics[i][2] + ".html\"><p id=\"box2\" style=\"background-color:" + colors[i] + fac + "0\">" + topics[i][0] + "</p></div>";
+        }
+        if (topics[i][3]) {
+          document.body.innerHTML += "<p id=\"subbox\">" + topics[i][1] + "</p>";
+        }
+        else {
+          document.body.innerHTML += "<p id=\"subbox\" class=\"par\">" + topics[i][1] + "</p>";
+        }
       }
       document.body.innerHTML += "<p id=\"hugeexplanation\">More Advanced Coding Techniques</p>";
 
       for (var i = t1 ; i < t2 ; i++) {
-        document.body.innerHTML += "<a style=\"text-decoration:none\" href=\"tutorials/" + topics[i][2] + ".html\"><p id=\"box1\" style=\"background-color:" + colors[i] + fac + "0\">" + topics[i][0] + "</p></a>";
-        document.body.innerHTML += "<p id=\"subbox\">" + topics[i][1] + "</p>"
+        if (topics[i][3]) {
+          document.body.innerHTML += "<a style=\"text-decoration:none\" href=\"tutorials/" + topics[i][2] + ".html\"><p id=\"box1\" style=\"background-color:" + colors[i] + fac + "0\">" + topics[i][0] + "</p></a>";
+        }
+        else {
+          document.body.innerHTML += "<div style=\"text-decoration:none\" href=\"tutorials/" + topics[i][2] + ".html\"><p id=\"box2\" style=\"background-color:" + colors[i] + fac + "0\">" + topics[i][0] + "</p></div>";
+        }
+        if (topics[i][3]) {
+          document.body.innerHTML += "<p id=\"subbox\">" + topics[i][1] + "</p>";
+        }
+        else {
+          document.body.innerHTML += "<p id=\"subbox\" class=\"par\">" + topics[i][1] + "</p>";
+        }
       }
 
       document.body.innerHTML += "<p id=\"hugeexplanation\">Advanced Algorithmic Programming</p>";
       for (var i = t2 ; i < topics.length ; i++) {
-        document.body.innerHTML += "<a style=\"text-decoration:none\" href=\"tutorials/" + topics[i][2] + ".html\"><p id=\"box1\" style=\"background-color:" + colors[i] + fac + "0\">" + topics[i][0] + "</p></a>";
-        document.body.innerHTML += "<p id=\"subbox\">" + topics[i][1] + "</p>"
+        if (topics[i][3]) {
+          document.body.innerHTML += "<a style=\"text-decoration:none\" href=\"tutorials/" + topics[i][2] + ".html\"><p id=\"box1\" style=\"background-color:" + colors[i] + fac + "0\">" + topics[i][0] + "</p></a>";
+        }
+        else {
+          document.body.innerHTML += "<div style=\"text-decoration:none\" href=\"tutorials/" + topics[i][2] + ".html\"><p id=\"box2\" style=\"background-color:" + colors[i] + fac + "0\">" + topics[i][0] + "</p></div>";
+        }
+        if (topics[i][3]) {
+          document.body.innerHTML += "<p id=\"subbox\">" + topics[i][1] + "</p>";
+        }
+        else {
+          document.body.innerHTML += "<p id=\"subbox\" class=\"par\">" + topics[i][1] + "</p>";
+        }
       }
 
     </script>

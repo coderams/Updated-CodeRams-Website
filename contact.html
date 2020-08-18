@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JDHS CodeRams</title>
+        <meta charset="utf-8">
+        <title>New webpage</title>
+        <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Squada One">
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+      <p id="bigtext"><span class="red">CODE</span><span class="black"> RAMS</span></p>
+      <p id="caption">Jamesville-Dewitt High School's Computer Science Club</p>
+      <div id="navmenu">
+    		<ul>
+    			<li><a href="mainpage.html">Home</a></li>
+    			<li><a href="contests.html">Competitions</a></li>
+    			<li><a href="problems.html">Practice Problems</a></li>
+    			<li><a href="tutorials.html">Coding Tutorials</a></li>
+    			<li><a href="scores.html">Competition Leaderboard</a></li>
+    			<li><a style="background-color:#545454" href="contact.html">Contact Us</a></li>
+    		</ul>
+	    </div>
+
+      <h1 id="pagetitle">Contact Us</h1>
+      <p id="subtitle"><em>Contact the CodeRams officers with any questions</em></p>
+
+        <br><br>
+
+        <table id="ucontestlist" align="center" borderspacing=30px>
+          <tr id="firstel">
+            <th>Officer Name</th>
+            <th>Email</th>
+            <th>Codeforces Username</th>
+            <th>Discord Username</th>
+          </tr>
+        </table>
+
+    </body>
+
+    <script>
+      officers = [
+        ["Xavier", "explored27@gmail.com", "plourde27", "plourde27", true],
+        ["Shamus", "21sendries@jd.cnyric.org", "Shamusend", "se323", false],
+        ["Sam", "22skim@jd.cnyric.org", "Forlorn_Fire", "FreeA", false],
+        ["Stefan", "22swang@jd.cnyric.org", "StefanWang", "Stef", false]
+      ];
+      for (var i = 0 ; i < officers.length ; i++) {
+        if (officers[i][4]) {
+          document.getElementById("ucontestlist").innerHTML += "<tr><th>" + officers[i][0] + "</th><th>" + officers[i][1] + "</th><th>" + officers[i][2] + "</th><th>" + officers[i][3] + "</th></tr>";
+        }
+        else {
+          document.getElementById("ucontestlist").innerHTML += "<tr class=\"info\"><th>" + officers[i][0] + "</th><th>" + officers[i][1] + "</th><th>" + officers[i][2] + "</th><th>" + officers[i][3] + "</th></tr>";
+
+        }
+      }
+      </script>
+
+</html>
