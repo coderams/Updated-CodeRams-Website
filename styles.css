@@ -170,6 +170,21 @@ td {
 
 }
 
+.box {
+  margin-left: 20px;
+  margin-right: 8px;
+}
+
+#tags {
+  margin-left: 16%;
+  margin-right: 16%;
+}
+
+#namebox {
+  width: 600px;
+  font-size: 17px;
+}
+
 #contest td {
   border-collapse: separate;
 	border-top: 1px solid black;
@@ -177,8 +192,8 @@ td {
 }
 
 #prob td {
-  margin-bottom: 0px;
-  padding-bottom: 50px;
+  margin-bottom: 10px;
+  padding-bottom: 60px;
   padding: 12px 12px 10px 10px
 }
 
@@ -311,6 +326,13 @@ pre {
 .rank {
     font-family: "Avenir";
     font-size: 18px;
+
+}
+
+.tag {
+    font-family: "AvenirNext-Bold";
+    font-size: 15px;
+
 }
 
 .secret {

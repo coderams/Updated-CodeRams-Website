@@ -37,7 +37,40 @@
       }
 
       var text = [
-        "[huge]ASCII VALUES AND CRYPTOGRAPHY"
+        "[huge]ASCII VALUES AND CRYPTOGRAPHY",
+        "[big]ASCII Values",
+        "[med]Motivation",
+        "To introduce the importance of ASCII value manipulation, let's solve the following coding problem: given a lowercase character, print the next one in the alphabet.",
+        "For example, given \"a\", you would print \"b\", given \"b\" you would print \"c\", and so on.",
+        "One way to do this would be to make a huge list with each lowercase character, and use the .index() command. This approach works, but it's very tedious and inefficient, and it doesn't generalize to uppercase characters (in other words, if uppercase characters were included as well, we would have to make two lists, which would be even more tedious).",
+        "However, by manipulating ASCII values, we can solve this problem in one line of code.",
+        "[med]The ord() Command",
+        "In computer programming in general (i.e. in all languages, not just Python), each character is given a unique number that represents its ASCII value. For example, the value of \"A\" is 65, the value of \"7\" is 54, and the value of the spacebar is 32.",
+        "For now, these numbers aren't important, but the important thing is that the ASCII codes for both lowercase and uppercase letters are always one more than the letter directly before it in the alphabet (except for \"a\"), and one less than the letter directly above it in the alphabet (except for \"z\").",
+        "In Python, you can find the ASCII value of a character using the \"ord\" command, like this:",
+        "[cd]print(ord(\"a\")) #97, the ASCII value of \"a\"",
+        "[cd]print(ord(\"D\")) #68, the ASCII value of \"D\"",
+        "[med]The chr() Command",
+        "The \"chr\" command in Python is the opposite of the \"ord\" command: it returns the character with the given unique ASCII code.",
+        "See these examples:",
+        "[cd]print(chr(97)) #a",
+        "[cd]print(chr(68)) #D",
+        "Thus, chr(ord([any character])) will return the original character:",
+        "[cd]print(chr(ord(\"x\")) #x",
+        "[cd]print(chr(ord(\"Z\"))) #Z",
+        "[med]Ascii Value Manipulation",
+        "To find the next character after a given one in the alphabet, we can use the ord() and chr() commands.",
+        "First, we'll read in the character as input:",
+        "[cd]character = input()",
+        "Next, we'll convert the character to its ASCII value:",
+        "[cd]character = ord(character)",
+        "Then, this is just a number, so we can add one to it:",
+        "[cd]character += 1",
+        "Now, we can convert the number back into a character again and print it:",
+        "[cd]character = chr(character)",
+        "[cd]print(character)",
+        "[med]Using the Mod Operator",
+
 
       ];
 
